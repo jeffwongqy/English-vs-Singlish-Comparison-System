@@ -24,3 +24,12 @@ The objectives of this project are to:
 6. Compare the two linguistic analyses to highlight differences between Standard English and Singlish.
 7. Develop a simple Streamlit interface that presents the analysis results in a clear and user-friendly format.
 8. Demonstrate the application of LLMs to computational linguistics, particularly in the analysis of grammatical and pragmatic differences between English varieties.
+
+## 5. Testing for Common Singlish 
+1. "Don't worry, relax lah." — Don't worry, stay calm.
+2. "Eh, I chope this table already hor!" — Hey, I have already reserved this table with a tissue packet!
+3. "You makan already or not?" — Have you eaten your meal yet?
+4. "Aiyoh, why you so blur like sotong one?" — Oh no, why are you so confused and clueless?
+5. "This chicken rice is damn shiok!" — This chicken rice is extremely delicious!
+6. "So sian, nothing to do at home today." — I feel so bored and fed up because there is nothing to do today.
+7. "Don't chiong so fast, take it easy." — Do not rush so fast.
