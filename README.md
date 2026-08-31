@@ -25,6 +25,8 @@ The objectives of this project are to:
 7. Develop a simple Streamlit interface that presents the analysis results in a clear and user-friendly format.
 8. Demonstrate the application of LLMs to computational linguistics, particularly in the analysis of grammatical and pragmatic differences between English varieties.
 
+## 4. Langchain Runnables Parallel
+
 ## 5. Testing for Common Singlish 
 1. "Don't worry, relax lah." — Don't worry, stay calm.
 2. "Eh, I chope this table already hor!" — Hey, I have already reserved this table with a tissue packet!
