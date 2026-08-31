@@ -1,5 +1,8 @@
 # English vs Singlish Comparison System
 
+<img width="547" height="365" alt="images" src="https://github.com/user-attachments/assets/1e3dad5a-104d-4dec-b751-8cab77172726" />
+
+
 ## 1. Introduction
 Singapore is a multilingual society where English is widely used alongside languages such as Mandarin, Malay, Tamil, and various Chinese dialects. Within this environment, Singapore English (Singlish) has developed distinctive vocabulary, grammatical patterns, discourse particles, and sentence structures. Examples include expressions such as “Can lah,” “You eat already or not?” and “Why you never tell me?”
 
