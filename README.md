@@ -1,1 +1,1 @@
-# English-vs-Singlish-Comparison-System
+# English vs Singlish Comparison System
