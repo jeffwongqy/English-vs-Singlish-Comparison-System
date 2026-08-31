@@ -1,6 +1,6 @@
 # English vs Singlish Comparison System
 
-<img width="547" height="365" alt="images" src="https://github.com/user-attachments/assets/1e3dad5a-104d-4dec-b751-8cab77172726" />
+<img width="1000" height="365" alt="images" src="https://github.com/user-attachments/assets/1e3dad5a-104d-4dec-b751-8cab77172726" />
 
 
 ## 1. Introduction
