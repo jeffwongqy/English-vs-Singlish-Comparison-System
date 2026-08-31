@@ -35,3 +35,6 @@ The objectives of this project are to:
 5. "This chicken rice is damn shiok!" — This chicken rice is extremely delicious!
 6. "So sian, nothing to do at home today." — I feel so bored and fed up because there is nothing to do today.
 7. "Don't chiong so fast, take it easy." — Do not rush so fast.
+
+## 6. Demo Working Implementation
+
