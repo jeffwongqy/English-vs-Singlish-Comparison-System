@@ -27,6 +27,125 @@ The objectives of this project are to:
 
 ## 4. Langchain Runnables Parallel
 
+```python
+import streamlit as st
+from langchain_ollama import ChatOllama
+from langchain_core.prompts import ChatPromptTemplate
+from langchain_core.output_parsers import StrOutputParser
+from langchain_core.runnables import RunnableParallel
+```
+
+### 4.1 User Input
+Allows users to enter a Singlish sentence for analysis.
+
+```python
+st.info("NOTE: Please enter a sentence written in Singlish.")
+user_input = st.text_area("Enter a sentence:", placeholder = "Example: This chicken rice is damn shiok!")
+```
+
+### 4.2 Ollama LLM
+Configures the local llama3.2 model to perform the linguistic analysis and correction tasks.
+
+```python
+llm = ChatOllama(model = "llama3.2", temperature = 0, num_ctx = 1024)
+```
+
+### 4.3 English Prompt
+Defines instructions for analyzing the input from a Standard English perspective.
+
+```python
+english_prompt = ChatPromptTemplate.from_template(
+    
+    """
+    You are an English linguistics analyzer.
+    
+    Analyze the following sentence from the perspective of Standard English. 
+    
+    Sentence: 
+    {sentence}
+    
+    Provide a concise analysis covering:
+    
+    1. Grammar Structure
+    2. Vocabulary
+    3. Sentence meaning 
+    4. Whether the sentence is grammatically acceptable
+    5. A Standard English version if necessary
+    
+    Do not discuss Singlish. 
+    """
+)
+```
+
+### 4.4. Singlish Prompt
+Defines instructions for analyzing grammatical, lexical, and conversational features from a Singlish perspective.
+
+```python
+singlish_prompt = ChatPromptTemplate.from_template(
+    
+    """
+    You are a Singapore English (Singlish) linguistics analyzer. 
+    
+    Analyze the following sentence from the perspective of Singlish. 
+    
+    Sentence:
+    {sentence}
+    
+    Provide a concise analysis covering:
+    
+    1. Singlish grammatical features
+    2. Vocabulary or discourse particles
+    3. Sentence Meaning
+    4. Possible Singaporean cultural or conversational context
+    5. A natural Singlish interpretation or version 
+    
+    Do not assume every Singaporean uses Singlish.
+    Do not stereotype Singaporeans. 
+    """ 
+)
+
+```
+
+### 4.5 Langchain Chains
+Connects each prompt to the LLM and StrOutputParser to convert the model response into readable text.
+
+```python
+english_chain = english_prompt | llm | StrOutputParser()
+singlish_chain = singlish_prompt | llm | StrOutputParser()
+```
+
+### 4.6 RunnableParallel
+Combines both analysis pipelines so the same sentence is processed by both perspectives.
+
+```python
+parallel_chain = RunnableParallel(standard_english = english_chain, 
+                                  singlish = singlish_chain)
+```
+
+### 4.7 Validation 
+Checks whether the user has entered a sentence before executing the pipeline.
+
+### 4.8 Pipeline Execution 
+Invokes the complete RunnableSequence and processes the submitted sentence through all three stages.
+
+### 4.9 Output Display
+Presents the standard English analysis and Singlish analysis in the Streamlit interface.
+
+```python
+if st.button("Analyze Sentence"):
+    if user_input.strip() == "":
+        st.warning("Please enter a sentence.")
+    else:
+        with st.spinner("Analyzing..."):
+            result = parallel_chain.invoke({"sentence": user_input})
+            
+            st.subheader("Standard English Analysis")
+            st.write(result["standard_english"])
+            
+            st.subheader("Singlish")
+            st.write(result["singlish"])
+```
+
 ## 5. Testing for Common Singlish 
 1. "Don't worry, relax lah." — Don't worry, stay calm.
 2. "Eh, I chope this table already hor!" — Hey, I have already reserved this table with a tissue packet!
