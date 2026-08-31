@@ -156,4 +156,11 @@ if st.button("Analyze Sentence"):
 7. "Don't chiong so fast, take it easy." — Do not rush so fast.
 
 ## 6. Demo Working Implementation
+<img width="1917" height="970" alt="pic1" src="https://github.com/user-attachments/assets/a93ef5dd-8906-4b39-ac1f-dec2e46eef36" />
+
+<img width="1917" height="965" alt="pic2" src="https://github.com/user-attachments/assets/e1022ff1-2053-44b8-8733-18510b8815ab" />
+
+<img width="1917" height="967" alt="pic3" src="https://github.com/user-attachments/assets/c11e865b-bbc7-4478-a9be-335fa318351f" />
+
+
 
